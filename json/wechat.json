@@ -1,0 +1,23 @@
+/*0为马,1为人*/
+[
+    {
+        "type":0,
+        "mes":"你是不是喝酒了",
+        "refuse":false
+    },
+    {
+        "type":1,
+        "mes":"没喝",
+        "refuse":true
+    },
+    {
+        "type":1,
+        "mes":"没喝",
+        "refuse":true
+    },
+    {
+        "type":1,
+        "mes":"就喝了几杯",
+        "refuse":false
+    },
+]

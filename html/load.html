@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>e代驾</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/other.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/fastclick.js"></script>
+    <script src="../js/jquery.tap.min.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="../js/PxLoader.js"></script>
+    <script src="../js/PxLoaderImage.js"></script>
+    <script src="../js/soundmanager2.js"></script>
+    <script src="../js/PxLoaderSound.js"></script>
+    <meta name="viewport" id="viewport" content="width=640, user-scalable=no">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="loading"><img src="../images/loading.png"></div>
+        <div class="count">66%</div>
+    </div>
+    <script>
+        var i = $('.count');
+        var loader = new PxLoader();
+        loader.addImage('../images/step-e/bg.jpg')
+        loader.addImage('../images/step-e/click.png')
+        loader.addImage('../images/step-e/knight-1.png')
+        loader.addImage('../images/step-e/knight-2.png')
+        loader.addImage('../images/step-e/knight-3.png')
+        loader.addImage('../images/step-e/knight-4.png')
+        loader.addImage('../images/step-e/xiaohong.png')
+        loader.addImage('../images/step-e/xiuxi.png')
+        loader.addImage('../images/game/bg.png')
+        loader.addImage('../images/game/bowl-color.png')
+        loader.addImage('../images/game/bowl.png')
+        loader.addImage('../images/game/drink-1.png')
+        loader.addImage('../images/game/drink-2.png')
+        loader.addImage('../images/game/game-end-1.jpg')
+        loader.addImage('../images/game/game-end-2.jpg')
+        loader.addImage('../images/game/game-end-3.jpg')
+        loader.addImage('../images/game/hand.png')
+        loader.addImage('../images/game/ready.png')
+        loader.addImage('../images/game/restart.png')
+        loader.addImage('../images/game/vodka.png')
+        loader.addImage('../images/index/bg.png')
+        loader.addImage('../images/index/btn-activity.png')
+        loader.addImage('../images/index/btn-prize.png')
+        loader.addImage('../images/index/door-left.png')
+        loader.addImage('../images/index/door-right.png')
+        loader.addImage('../images/index/door.png')
+        loader.addImage('../images/index/huodong.png')
+        loader.addImage('../images/index/knight.png')
+        loader.addImage('../images/index/light-box.png')
+        loader.addImage('../images/index/light.png')
+        loader.addImage('../images/index/receive.png')
+        loader.addImage('../images/index/reel-b.png')
+        loader.addImage('../images/index/reel.png')
+        loader.addImage('../images/index/smoke.png')
+        loader.addImage('../images/chat/1.jpg')
+        loader.addImage('../images/chat/10.jpg')
+        loader.addImage('../images/chat/11.jpg')
+        loader.addImage('../images/chat/2.jpg')
+        loader.addImage('../images/chat/3.jpg')
+        loader.addImage('../images/chat/4.jpg')
+        loader.addImage('../images/chat/5.jpg')
+        loader.addImage('../images/chat/6.jpg')
+        loader.addImage('../images/chat/7.jpg')
+        loader.addImage('../images/chat/8.jpg')
+        loader.addImage('../images/chat/9.jpg')
+        loader.addImage('../images/other/2b.png')
+        loader.addImage('../images/other/card.jpg')
+        loader.addImage('../images/other/empty.jpg')
+        loader.addImage('../images/other/fail.jpg')
+        loader.addImage('../images/other/hand.png')
+        loader.addImage('../images/other/input.png')
+        loader.addImage('../images/other/phone.png')
+        loader.addImage('../images/other/reinput.png')
+        loader.addImage('../images/other/shake.png')
+        loader.addImage('../images/other/share-2.png')
+        loader.addImage('../images/other/share.jpg')
+        loader.addImage('../images/other/step-f-bg.jpg')
+        loader.addImage('../images/other/step-g-bg.jpg')
+        loader.addImage('../images/other/step-h-1-1.jpg')
+        loader.addImage('../images/other/step-h-1.jpg')
+        loader.addImage('../images/other/submit.png')
+        loader.addImage('../images/other/success.jpg')
+        loader.addImage('../images/other/text.png')
+        loader.addImage('../images/other/xuanfu.png')
+        loader.addImage('../images/share.jpg')
+        loader.addImage('../images/sns.jpg')
+        loader.addImage('../images/step-e')
+        loader.addImage('../images/logo.png')
+        loader.addImage('../images/bg.jpg')
+        loader.addSound(1,'../sound1.wav');
+        loader.addSound(1,'../sound2.wav');
+        loader.addSound(1,'../sound3.wav');
+        loader.addSound(1,'../sound4.wav');
+        loader.addSound(1,'../sound5.wav');
+        loader.addSound(1,'../sound6.wav');
+        loader.addSound(1,'../sound7-1.wav');
+        loader.addSound(1,'../sound7-2.wav');
+        loader.addSound(1,'../sound8.wav');
+        loader.addSound(1,'../sound9.wav');
+        loader.addSound(1,'../sounddoor.wav');
+        loader.addSound(1,'../soundhorse.mp3');
+        loader.addSound(1,'../soundsprize.mp3');
+        loader.addSound(1,'../soundwechat.mp3');
+        loader.addProgressListener(function(e) {
+            i.html(~~((e.completedCount / e.totalCount)*100) + '%');
+            if(e.completedCount == e.totalCount){
+                if(location.hash == '#main'){
+                    location.href = 'main.html';
+                }else{
+                    location.href = 'share.html';
+                }
+            }
+        });
+        loader.start();
+    </script>
+</body>
+</html>

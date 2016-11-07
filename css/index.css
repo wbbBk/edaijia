@@ -1,0 +1,330 @@
+#logo{
+    position: absolute;
+    top: 18px;
+    left:50%;
+    margin-left: -65px;
+    width: 130px;
+    height: 31px;
+    background: url(../images/logo.png) no-repeat;
+}
+.box{
+    position: relative;
+    width: 640px;
+    height: 100%;
+    background: url(../images/index/bg.png) no-repeat;
+    z-index: 10;
+    overflow: hidden;
+}
+.btn{
+    position: absolute;
+    bottom: 37px;
+    width:181px;
+    height: 69px;
+}
+.btn-activity{
+    left:125px;
+    background: url(../images/index/btn-activity.png) no-repeat;
+}
+.btn-prize{
+    right:125px;
+    background: url(../images/index/btn-prize.png) no-repeat;
+}
+.door{
+    position: absolute;
+    width: 200px;
+    height: 303px;
+    top: 557px;
+    left: 232px;
+    overflow: hidden;
+}
+.door-left{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 303px;
+    background: url(../images/index/door-left.png) no-repeat;
+}
+.door-right{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100px;
+    height: 303px;
+    background: url(../images/index/door-right.png) no-repeat;
+}
+.door-left .light{
+    position: absolute;
+    top: 135px;
+    left: 50px;
+}
+.door-right .light{
+    position: absolute;
+    top: 135px;
+    right: 50px;
+}
+.door-left .light:after,.door-right .light:after{
+    content:"";
+    position: absolute;
+    top:0px;
+    left:0px;
+    display: block;
+    width:100%;
+    height:100%;
+}
+
+.huo{
+    position: absolute;
+    top:45px;
+    left: 50px;
+    z-index: 10;
+}
+.huo span{
+    position: absolute;
+    bottom: 60px;
+    right: 50px;
+    font-weight: 900;
+}
+.huo span.top{
+    bottom:auto;
+    top:60px;
+}
+.huo-bg{
+    position: fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background: #fff;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    z-index: 10;
+}
+.huo,.huo-bg{
+    display: none;
+}
+.smoke{
+    position: absolute;
+    bottom:-595px;
+    left: 0px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 640px;
+    height: 595px;
+    background: url(../images/index/smoke.png) no-repeat;
+    z-index: 10;
+    -webkit-transition:all 1s ease-in-out;
+            transition:all 1s ease-in-out;
+    -webkit-transition-delay: 4s;
+            transition-delay: 4s;
+}
+.smoke.up{
+    -webkit-transform:translate(0px,-595px);
+        -ms-transform:translate(0px,-595px);
+            transform:translate(0px,-595px);
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.knight{
+    position: absolute;
+    left:-497px;
+    bottom:0px;
+    width: 497px;
+    height: 718px;
+    background: url(../images/index/knight.png) no-repeat;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition:all 1s ease-in-out;
+            transition:all 1s ease-in-out;
+    -webkit-transition-delay: 4.5s;
+            transition-delay: 4.5s;
+    z-index: 99;
+}
+.knight.move{
+    -webkit-transform:translate(537px,0px);
+        -ms-transform:translate(537px,0px);
+            transform:translate(537px,0px);
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.reel{
+    position: absolute;
+    left: 208px;
+    top: 171px;
+    width: 111px;
+    height: 203px;
+    background: url(../images/index/reel.png) no-repeat;
+}
+.reel.reel-light{
+    -webkit-animation:reel-light 0.8s infinite;
+            animation:reel-light 0.8s infinite;
+}
+
+.reel-b{
+    position: absolute;
+    top:0px;
+    left:22px;
+    z-index: 10;
+    display: none;
+}
+.receive{
+    position: absolute;
+    bottom: 240px;
+    left: 180px;
+}
+/*动画*/
+/*烟升起*/
+@-webkit-keyframes reel-light
+{
+    from {opacity: 1;filter: alpha(opacity=100);}
+    to {opacity: 0;filter: alpha(opacity=0);}
+}
+@keyframes reel-light
+{
+    from {opacity: 1;filter: alpha(opacity=100);}
+    to {opacity: 0;filter: alpha(opacity=0);}
+}
+
+
+
+
+/*门动画*/
+.ld{
+    -webkit-animation:leftDoor 5s 1;
+            animation:leftDoor 5s 1;
+}
+.rd{
+    -webkit-animation:rightDoor 5s 1;
+            animation:rightDoor 5s 1;
+}
+@-webkit-keyframes leftDoor{
+    0%{
+        -webkit-transform:translate(0px,0px);
+                transform:translate(0px,0px);
+    }
+    100%{
+        -webkit-transform:translate(-100px,0px);
+                transform:translate(-100px,0px);
+    }
+}
+@keyframes leftDoor{
+    0%{
+        -webkit-transform:translate(0px,0px);
+                transform:translate(0px,0px);
+    }
+    100%{
+        -webkit-transform:translate(-100px,0px);
+                transform:translate(-100px,0px);
+    }
+}
+
+
+
+@-webkit-keyframes rightDoor{
+    0%{
+        -webkit-transform:translate(0px,0px);
+                transform:translate(0px,0px);
+    }
+    100%{
+        -webkit-transform:translate(100px,0px);
+                transform:translate(100px,0px);
+    }
+}
+
+
+
+@keyframes rightDoor{
+    0%{
+        -webkit-transform:translate(0px,0px);
+                transform:translate(0px,0px);
+    }
+    100%{
+        -webkit-transform:translate(100px,0px);
+                transform:translate(100px,0px);
+    }
+}
+
+@-webkit-keyframes rightDoor_backup {
+0%,100% {
+    -webkit-transform-origin: 100% 50%;
+}
+0{
+    -webkit-transform:perspective(0) rotateY(0);
+}
+100% {
+    -webkit-transform:perspective(600px) rotateY(-70deg);
+    }
+}
+@keyframes rightDoor_backup {
+0%,100% {
+    -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+}
+0{
+    -webkit-transform:perspective(0) rotateY(0);
+            transform:perspective(0) rotateY(0);
+}
+100% {
+    -webkit-transform:perspective(600px) rotateY(-70deg);
+            transform:perspective(600px) rotateY(-70deg);
+    }
+}
+
+@-webkit-keyframes leftDoor_backup {
+0%,100% {
+    -webkit-transform-origin: 0% 50%;
+}
+0{
+    -webkit-transform:perspective(0) rotateY(0);
+}
+100% {
+    -webkit-transform:perspective(600px) rotateY(70deg);
+    }
+}
+@keyframes leftDoor_backup {
+0%,100% {
+    -webkit-transform-origin: 0% 50%;
+            transform-origin: 0% 50%;
+}
+0{
+    -webkit-transform:perspective(0) rotateY(0);
+            transform:perspective(0) rotateY(0);
+    }
+100% {
+    -webkit-transform:perspective(600px) rotateY(70deg);
+            transform:perspective(600px) rotateY(70deg);
+    }
+}
+
+
+
+
+/*门环*/
+.l{
+    position: absolute;
+    width: 206px;
+    height: 132px;
+    top: 90px;
+    z-index: 99;
+    -webkit-animation:l-light 1s infinite;
+            animation:l-light 1s infinite;
+}
+.m{
+    position: absolute;
+    width: 206px;
+    height: 132px;
+    top: 90px;
+    z-index: 1;
+}
+
+
+@-webkit-keyframes l-light
+{
+    from {opacity: 1;filter: alpha(opacity=100);}
+    to {opacity: 0;filter: alpha(opacity=0);}
+}
+@keyframes l-light
+{
+    from {opacity: 1;filter: alpha(opacity=100);}
+    to {opacity: 0;filter: alpha(opacity=0);}
+}

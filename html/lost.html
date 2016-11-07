@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>e代驾</title><script id="DS_PRE_JS" type="text/javascript"
+src="http://tongji.datastory.com.cn/resources/javascripts/pre-ds-min.js?dsTid=e0a819f5-2c3c-4d9d-8a4f-a3f8cbc22646">
+</script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/fastclick.js"></script>
+    <script src="../js/jquery.tap.min.js"></script>
+    <script src="../js/sound.js"></script>
+    <link rel="stylesheet" href="../css/other.css">
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <meta name="viewport" id="viewport" content="width=640, user-scalable=no">
+</head>
+<body>
+    <div class="wrapper">
+        <div id="lost">
+            <ul>
+                <li><img src="../images/chat/1.jpg"></li>
+                <li class="right"><img src="../images/chat/2.jpg"></li>
+                <li class="right"><img src="../images/chat/3.jpg"></li>
+                <li class="right"><img src="../images/chat/4.jpg"></li>
+                <li><img src="../images/chat/5.jpg"></li>
+                <li><img src="../images/chat/6.jpg"></li>
+                <li><img src="../images/chat/7.jpg"></li>
+                <li><img src="../images/chat/8.jpg"></li>
+                <li><img src="../images/chat/9.jpg"></li>
+                <li class="right"><img src="../images/chat/10.jpg"></li>
+                <li class="center"><img src="../images/chat/11.jpg"></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var wait = 1500;
+        var end  = 0;
+        var silent = [1,2,9,10];
+        var flag = null;
+        $('ul li').each(function(index,elem){
+            $(this).delay(wait * index).fadeIn(function(){
+                if(!flag){
+                    flag = silent.splice(0,1);
+                }
+                if(end != flag){
+                    play('../sound/wechat.mp3');
+                }else{
+                    flag = null;
+                }
+                end++;
+                $('html, body').animate({scrollTop: $(document).height()}, 300);
+                if(end == 11){
+                    play('../sound/8.mp3');
+                }
+            });
+        });
+        setTimeout(function(){
+            $('body').tap(function(){
+                location.href = 'step-f.html';
+            })
+        },20000);
+    </script>
+    <script src="../js/share.js?v=1" charset="utf-8"></script>
+</body>
+</html>

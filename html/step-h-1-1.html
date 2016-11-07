@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>e代驾</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/other.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/fastclick.js"></script>
+    <script src="../js/jquery.tap.min.js"></script>
+    <script src="../js/request.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <meta name="viewport" id="viewport" content="width=640, user-scalable=no">
+</head>
+<body>
+    <div class="wrapper auto">
+        <div class="step-h-1-1-bg">
+            <input type="text" class="username" name="username">
+            <input type="text" class="tel" name="tel">
+            <input type="text" class="addres" name="addres">
+            <div class="submit"></div>
+            <span class="close">[关闭]</span>
+        </div>
+    </div>
+    <script>
+        var openid = $.cookie('openid');
+        $.get(api_path+'tviewprize.php?openid='+openid,function(data){
+            data = JSON.parse(data.replace(/'/g,'\"'));
+            if(data[0].name && data[0].name != 'undefined'){
+                $('input[name=username]').val(data[0].name);
+            }
+            if(data[0].mobile && data[0].mobile != 'undefined'){
+                $('input[name=tel]').val(data[0].mobile);
+            }
+            if(data[0].address && data[0].address != 'undefined'){
+                $('input[name=addres]').val(data[0].address);
+            }
+        });
+        $('.submit').tap(function(){
+            update(openid);
+        });
+        $('.close').tap(function(){
+            location.href = 'main.html'
+        });
+    </script>
+    <script src="../js/share.js?v=1"></script>
+</body>
+</html>

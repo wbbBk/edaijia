@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>e代驾</title>
+    <link rel="stylesheet" href="../css/reset.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="../css/public.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="../css/index.css" media="screen" title="no title" charset="utf-8">
+    <script src="../js/jquery.min.js" charset="utf-8"></script>
+    <script src="../js/fastclick.js" charset="utf-8"></script>
+    <script src="../js/jquery.tap.min.js" charset="utf-8"></script>
+    <script src="../js/sound.js" charset="utf-8"></script>
+    <script src="../js/request.js" charset="utf-8"></script>
+    <script src="../js/jquery.cookie.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <meta name="viewport" id="viewport" content="width=640, user-scalable=no">
+</head>
+<body>
+    <div class="wrapper auto">
+        <!-- <div id="logo"></div> -->
+        <div class="box">
+            <div class="door">
+                <div class="door-left">
+                </div>
+                <div class="door-right">
+                </div>
+                <div class="m"><img src="../images/index/m.png" alt="" /></div>
+                <div class="l"><img src="../images/index/l.png" alt=""></div>
+            </div>
+            <div class="btn-activity btn"></div>
+            <div class="btn-prize btn"></div>
+            <div class="smoke"></div>
+            <div class="knight">
+                <div class="reel reel-light"></div>
+            </div>
+        </div>
+        <div class="huo-bg"></div>
+        <div class="huo">
+            <img src="../images/index/huodong.png" alt="">
+            <span class="close-huo">[关闭]</span>
+            <span class="close-huo top">[关闭]</span>
+        </div>
+        <div class="reel-b">
+            <img src="../images/index/reel-b.png" alt="">
+            <img src="../images/index/receive.png" alt="" class="receive">
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(function() {
+        FastClick.attach(document.body);
+    });
+    window.onload = function(){
+            var audio = play('../sound/1.mp3');
+
+            $('.btn-activity').tap(function(){
+                $('.huo,.huo-bg').fadeIn(1000);
+            });
+            $('.close-huo').tap(function(){
+                $('.huo,.huo-bg').fadeOut(1000);
+            });
+            $('.door-left,.door-right,.m,.l').tap(function(){
+                $('.m,.l').hide();
+                audio.pause();
+                $('.door-left').addClass('ld');
+                $('.door-right').addClass('rd');
+                $('.smoke').addClass('up');
+                $('.knight').addClass('move');
+                play('../sound/door.mp3');
+                setTimeout(function(){
+                    play('../sound/2.mp3');
+                },5500);
+            });
+            $('.reel').tap(function(){
+                $('.huo-bg,.reel-b').fadeIn(1000);
+            });
+            $('.reel-b').tap(function(){
+                location.href = 'step-e.html';
+            });
+            $('.btn-prize').tap(function(){
+                //TODO 传入openid
+                var openid = $.cookie('openid');
+                // alert(openid);
+                viewprize(openid);
+            });
+
+    };
+    </script>
+
+   <script src="../js/share.js?v=1" charset="utf-8"></script>
+</body>
+</html>

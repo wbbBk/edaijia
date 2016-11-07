@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>e代驾</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/other.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/fastclick.js"></script>
+    <script src="../js/jquery.tap.min.js"></script>
+    <script src="../js/request.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <meta name="viewport" id="viewport" content="width=640, user-scalable=no">
+</head>
+<body>
+    <div class="wrapper auto">
+        <div class="step-h-1-bg">
+            <input type="text" class="username" name="username">
+            <input type="text" class="tel" name="tel">
+            <input type="text" class="addres" name="addres">
+            <div class="submit"></div>
+            <span class="close">[关闭]</span>
+        </div>
+    </div>
+    <script>
+        $('.submit').tap(function(){
+            var openid = $.cookie('openid');
+            update(openid);
+        });
+        $('.close').tap(function(){
+            location.href = 'main.html'
+        });
+    </script>
+    <script src="../js/share.js?v=1"></script>
+</body>
+</html>

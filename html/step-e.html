@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>e代驾</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/step-e.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/fastclick.js"></script>
+    <script src="../js/jquery.tap.min.js"></script>
+    <script src="../js/sound.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <meta name="viewport" id="viewport" content="width=640, user-scalable=no">
+</head>
+<body>
+    <div class="wrapper white">
+        <div class="bg">
+            <img src="../images/step-e/bg.jpg">
+        </div>
+        <div class="knight">
+            <div class="click">
+                <img src="../images/step-e/click.png">
+            </div>
+        </div>
+        <div class="xiaohong"><img src="../images/step-e/xiaohong.png"></div>
+        <div class="xiuxi"><img src="../images/step-e/xiuxi.png"/></div>
+    </div>
+    <div class="arc"></div>
+    <script type="text/javascript">
+    $(function() {
+        FastClick.attach(document.body);
+    });
+    window.onload = function(){
+        var u = navigator.userAgent, app = navigator.appVersion;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        $('.xiaohong').css({opacity:1});
+        var audio = play('../sound/3.mp3');
+        $('.click').tap(function(){
+            audio.pause();
+            $('.knight,.bg,.xiaohong').addClass('move');
+            $('.xiuxi').css('opacity',1);
+            $(this).hide();
+            if(isAndroid){
+                play('../sound/4.mp3');
+            }else{
+                play('../sound/horse.mp3');
+                play('../sound/4.mp3');
+            }
+            setTimeout(function(){
+                $('.arc').addClass('scale');
+                location.href = 'game.html';
+            },6000)
+        });
+    }
+    </script>
+    <script src="../js/share.js?v=1"></script>
+</body>
+</html>

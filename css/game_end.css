@@ -1,0 +1,16 @@
+.end{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.end .bg{
+    width: 100%;
+    height: 100%;
+}
+.restart{
+    position: absolute;
+    bottom: 70px;
+    left:50%;
+    margin-left: -106px;
+}

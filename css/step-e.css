@@ -1,0 +1,115 @@
+.bg{
+    position: absolute;
+    bottom: 0px;
+    -webkit-transition: all 5s;
+            transition: all 5s;
+}
+.bg.move{
+    -webkit-transform: translateX(-634px);
+        -ms-transform: translateX(-634px);
+            transform: translateX(-634px);
+}
+.knight{
+    position: absolute;
+    width: 322px;
+    height: 316px;
+    bottom:270px;
+    left:0px;
+    background: url(../images/step-e/knight-1.png) no-repeat 0px 100%;
+    background-repeat: no-repeat;
+}
+.click{
+    position: absolute;
+    right: 100px;
+    bottom: -20px;
+}
+.knight.move{
+    -webkit-animation: move .44s infinite;
+            animation: move .44s infinite;
+}
+.arc{
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left: -250px;
+    margin-top: -250px;
+    border-radius: 500px;
+    width: 500px;
+    height: 500px;
+    background: #fff;
+    box-shadow: 0px 0px 50px 30px #FFF;
+    -webkit-transition: all 1s;
+            transition: all 1s;
+    -webkit-transform:scale(0);
+        -ms-transform:scale(0);
+            transform:scale(0);
+    z-index: 999;
+}
+.arc.scale{
+    -webkit-transform:scale(3);
+        -ms-transform:scale(3);
+            transform:scale(3);
+}
+
+
+
+.xiaohong{
+    position: fixed;
+    top:150px;
+    left:50px;
+    z-index: 99;
+    opacity: 0;
+    -webkit-transition: all 1s;
+            transition: all 1s;
+}
+.xiaohong.move{
+    -webkit-transform: translateX(-634px);
+        -ms-transform: translateX(-634px);
+            transform: translateX(-634px);
+    opacity: 1;
+}
+.xiuxi{
+    position: fixed;
+    top:150px;
+    left:50px;
+    z-index: 99;
+    opacity: 0;
+    -webkit-transition: all 5s;
+            transition: all 5s;
+    -webkit-transition-delay: 1s;
+            transition-delay: 1s;
+}
+@-webkit-keyframes move{
+    0%{
+        background: url(../images/step-e/knight-1.png) no-repeat 0px 100%;
+    }
+    25%{
+        background: url(../images/step-e/knight-2.png) no-repeat 0px 100%;
+    }
+    50%{
+        background: url(../images/step-e/knight-3.png) no-repeat 0px 100%;
+    }
+    75%{
+        background: url(../images/step-e/knight-4.png) no-repeat 0px 100%;
+    }
+    100%{
+        background: url(../images/step-e/knight-1.png) no-repeat 0px 100%;
+    }
+}
+@keyframes move{
+    0%{
+        background: url(../images/step-e/knight-1.png) no-repeat 0px 100%;
+    }
+    25%{
+        background: url(../images/step-e/knight-2.png) no-repeat 0px 100%;
+    }
+    50%{
+        background: url(../images/step-e/knight-3.png) no-repeat 0px 100%;
+    }
+    75%{
+        background: url(../images/step-e/knight-4.png) no-repeat 0px 100%;
+    }
+    100%{
+        background: url(../images/step-e/knight-1.png) no-repeat 0px 100%;
+    }
+}
